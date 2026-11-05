@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml"
+      spacing="15.0" style="-fx-background-color: #ffffff; -fx-padding: 20;"
+      fx:controller="com.backit.desktop.ui.CoincidenciasViewController">
+    <children>
+        <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #0f172a;" text="Motor de Coincidencias (Matching Multicriterio)" />
+
+        <HBox spacing="15.0" VBox.vgrow="ALWAYS">
+            <children>
+
+                <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Coincidencias Automáticas Sugeridas" />
+                        <TableView fx:id="tvCoincidencias" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="colId" prefWidth="70.0" text="Match ID" />
+                                <TableColumn fx:id="colObjeto" prefWidth="140.0" text="Objeto Encontrado" />
+                                <TableColumn fx:id="colReporte" prefWidth="140.0" text="Reporte Pérdida" />
+                                <TableColumn fx:id="colScoreTotal" prefWidth="90.0" text="Score Total" />
+                                <TableColumn fx:id="colEstado" prefWidth="110.0" text="Estado" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+
+                <!-- Panel Derecho: Desglose del Puntaje -->
+                <VBox prefWidth="350.0" spacing="12.0" style="-fx-background-color: #f8fafc; -fx-padding: 15; -fx-border-color: #e2e8f0; -fx-border-radius: 8;">
+                    <children>
+                        <Label style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Desglose del Puntaje" />
+
+                        <ProgressBar fx:id="pbScoreTotal" maxWidth="1.7976931348623157E308" progress="0.0" style="-fx-accent: #0284c7;" />
+                        <Label fx:id="lblScoreTotal" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #0284c7;" text="Puntaje Total: 0% Match" />
+
+                        <Separator />
+
+                        <VBox spacing="6.0">
+                            <children>
+                                <Label fx:id="lblCat" text="Categoría: 0.0" />
+                                <Label fx:id="lblUbic" text="Ubicación: 0.0" />
+                                <Label fx:id="lblFecha" text="Fecha: 0.0" />
+                                <Label fx:id="lblDesc" text="Descripción: 0.0" />
+                                <Label fx:id="lblCaract" text="Señas Privadas: 0.0" />
+                            </children>
+                        </VBox>
+
+                        <Button fx:id="btnIniciarReclamacion" maxWidth="1.7976931348623157E308" onAction="#handleIniciarReclamacion" style="-fx-background-color: #16a34a; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-height: 38;" text="Iniciar Reclamación Formal" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>

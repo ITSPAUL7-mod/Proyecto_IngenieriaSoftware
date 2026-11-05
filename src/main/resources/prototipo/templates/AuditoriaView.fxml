@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml"
+      spacing="15.0" style="-fx-background-color: #ffffff; -fx-padding: 20;"
+      fx:controller="com.backit.desktop.prototipo.ModuloBosquejoController">
+   <children>
+      <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #0f172a;" text="Auditoria e integridad (estructura prevista - no funcional)" />
+      <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+          <Tab text="Auditoria (datos de demostracion)">
+               <content>
+                  <VBox spacing="10.0" style="-fx-padding: 15;">
+                     <children>
+                        <HBox spacing="10.0">
+                           <children>
+                              <TextField fx:id="txtBuscarAuditoria" promptText="Filtrar por usuario o accion..." HBox.hgrow="ALWAYS" />
+                              <Button fx:id="btnFiltrar" onAction="#handleFiltrar" style="-fx-background-color: #334155; -fx-text-fill: white;" text="Filtrar Log" />
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tvAuditoria" VBox.vgrow="ALWAYS">
+                           <columns>
+                              <TableColumn prefWidth="130.0" text="Fecha/Hora" />
+                              <TableColumn prefWidth="130.0" text="Usuario" />
+                              <TableColumn prefWidth="110.0" text="Accion" />
+                              <TableColumn prefWidth="120.0" text="Entidad Afectada" />
+                              <TableColumn prefWidth="250.0" text="Hash Integridad SHA-256" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+          <Tab text="Log de Errores y Excepciones">
+               <content>
+                  <VBox spacing="10.0" style="-fx-padding: 15;">
+                     <children>
+                        <TableView fx:id="tvErrores" VBox.vgrow="ALWAYS">
+                           <columns>
+                              <TableColumn prefWidth="120.0" text="Codigo Error" />
+                              <TableColumn prefWidth="120.0" text="Modulo" />
+                              <TableColumn prefWidth="250.0" text="Mensaje" />
+                              <TableColumn prefWidth="140.0" text="Fecha" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>

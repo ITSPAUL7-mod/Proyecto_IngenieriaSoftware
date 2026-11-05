@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox   xmlns="http://javafx.com/javafx/21"
+        xmlns:fx="http://javafx.com/fxml"
+        spacing="15.0" style="-fx-background-color: #ffffff; -fx-padding: 20;"
+        fx:controller="com.backit.desktop.prototipo.ModuloBosquejoController">
+   <children>
+      <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #0f172a;" text="Declaracion de Objetos Extraviados" />
+      <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+          <Tab text="Declarar Nueva Perdida">
+               <content>
+                  <VBox maxWidth="600.0" spacing="12.0" style="-fx-padding: 20;">
+                     <children>
+                        <TextField fx:id="txtTituloPerdida" promptText="Titulo del objeto perdido (ej. Billetera Cuero)" />
+                        <ComboBox fx:id="cmbCategoriaPerdida" maxWidth="1.7976931348623157E308" promptText="Seleccionar Categoria" />
+                        <ComboBox fx:id="cmbUbicacionPerdida" maxWidth="1.7976931348623157E308" promptText="Ubicacion Estimada de Perdida" />
+                        <DatePicker fx:id="dpFechaPerdida" maxWidth="1.7976931348623157E308" promptText="Fecha Estimada de Perdida" />
+                        <TextArea fx:id="txtDescripcionPerdida" prefHeight="80.0" promptText="Descripcion publica de la perdida..." wrapText="true" />
+                        <TextArea fx:id="txtSenasReservadas" prefHeight="80.0" promptText="Señas reservadas / Detalles privados para comprobar propiedad..." wrapText="true" />
+                        <Button fx:id="btnRegistrarPerdida" maxWidth="1.7976931348623157E308" onAction="#handleRegistrarPerdida" style="-fx-background-color: #0284c7; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-height: 40;" text="Registrar Reporte de Perdida" />
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+          <Tab text="Catalogo Publico de Objetos Encontrados">
+               <content>
+                  <VBox spacing="10.0" style="-fx-padding: 15;">
+                     <children>
+                        <HBox spacing="10.0">
+                           <children>
+                              <TextField fx:id="txtBuscarCatalogo" promptText="Buscar por palabra clave..." HBox.hgrow="ALWAYS" />
+                              <ComboBox fx:id="cmbFiltroCategoria" promptText="Categoria" />
+                              <Button fx:id="btnBuscar" onAction="#handleBuscar" style="-fx-background-color: #334155; -fx-text-fill: white;" text="Buscar" />
+                           </children>
+                        </HBox>
+                        <TableView fx:id="tvCatalogo" VBox.vgrow="ALWAYS">
+                           <columns>
+                              <TableColumn prefWidth="160.0" text="Objeto" />
+                              <TableColumn prefWidth="120.0" text="Categoria" />
+                              <TableColumn prefWidth="150.0" text="Lugar Hallazgo" />
+                              <TableColumn prefWidth="110.0" text="Fecha Hallazgo" />
+                              <TableColumn prefWidth="180.0" text="Descripcion Publica" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15.0" style="-fx-background-color: #ffffff; -fx-padding: 20;"
+      fx:controller="com.backit.desktop.ui.GestionUsuariosViewController"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml">
+    <children>
+        <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #0f172a;" text="Administracion de Usuarios y Matriz de Roles (RBAC)" />
+        <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+            <children>
+                <VBox prefWidth="380.0" spacing="12.0" style="-fx-background-color: #f8fafc; -fx-padding: 15; -fx-border-color: #e2e8f0; -fx-border-radius: 8;">
+                    <children>
+                        <Label style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Crear Usuario" />
+                        <TextField fx:id="txtNombre" promptText="Nombres" />
+                        <TextField fx:id="txtApellido" promptText="Apellidos" />
+                        <TextField fx:id="txtCorreo" promptText="Correo Electronico" />
+                        <PasswordField fx:id="txtPassword" promptText="Contraseña inicial (mín. 10 caracteres)" />
+                        <ComboBox fx:id="cmbRol" maxWidth="1.7976931348623157E308" promptText="Asignar Rol" />
+                        <ComboBox fx:id="cmbInstitucion" maxWidth="1.7976931348623157E308" promptText="Institucion / Sede" />
+                        <Button fx:id="btnGuardarUsuario" maxWidth="1.7976931348623157E308" onAction="#handleGuardarUsuario" style="-fx-background-color: #0284c7; -fx-text-fill: white; -fx-font-weight: bold;" text="Guardar Usuario" />
+                        <Separator />
+                        <Label style="-fx-font-size: 13px; -fx-font-weight: bold;" text="Estado de la cuenta seleccionada" />
+                        <ComboBox fx:id="cmbEstado" maxWidth="1.7976931348623157E308" promptText="Nuevo estado" />
+                        <Button fx:id="btnCambiarEstado" maxWidth="1.7976931348623157E308" onAction="#handleCambiarEstado" text="Aplicar estado" />
+                        <HBox fx:id="boxNuevaInstitucion" spacing="8.0">
+                            <children>
+                                <TextField fx:id="txtNuevaInstitucion" promptText="Nueva institucion" HBox.hgrow="ALWAYS" />
+                                <Button onAction="#handleCrearInstitucion" text="Crear" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Label style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Usuarios Registrados" />
+                        <TableView fx:id="tvUsuarios" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="colId" prefWidth="50.0" text="ID" />
+                                <TableColumn fx:id="colNombre" prefWidth="150.0" text="Nombre" />
+                                <TableColumn fx:id="colCorreo" prefWidth="180.0" text="Correo" />
+                                <TableColumn fx:id="colRol" prefWidth="120.0" text="Rol" />
+                                <TableColumn fx:id="colInstitucion" prefWidth="130.0" text="Institucion" />
+                                <TableColumn fx:id="colEstado" prefWidth="90.0" text="Estado" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</VBox>

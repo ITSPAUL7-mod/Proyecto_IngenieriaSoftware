@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox   xmlns="http://javafx.com/javafx/21"
+        xmlns:fx="http://javafx.com/fxml"
+        spacing="15.0" style="-fx-background-color: #ffffff; -fx-padding: 20;"
+        fx:controller="com.backit.desktop.ui.ReclamacionesViewController">
+   <children>
+      <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #0f172a;" text="Gestion de Reclamaciones y Evidencias Privadas" />
+      <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox prefWidth="420.0" spacing="12.0" style="-fx-background-color: #f8fafc; -fx-padding: 15; -fx-border-color: #e2e8f0; -fx-border-radius: 8;">
+               <children>
+                  <Label style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Aportar Evidencias de Propiedad" />
+                  <ComboBox fx:id="cmbTipoEvidencia" maxWidth="1.7976931348623157E308" promptText="Tipo de Evidencia" />
+                  <TextArea fx:id="txtDescripcionEvidencia" prefHeight="80.0" promptText="Descripcion detallada de la prueba..." wrapText="true" />
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Button fx:id="btnAdjuntarArchivo" onAction="#handleAdjuntarArchivo" text="Adjuntar Archivo" />
+                        <Label fx:id="lblArchivoInfo" text="Ningun archivo" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="btnGuardarEvidencia" maxWidth="1.7976931348623157E308" onAction="#handleGuardarEvidencia" style="-fx-background-color: #0284c7; -fx-text-fill: white; -fx-font-weight: bold;" text="Guardar Evidencia" />
+                  <Separator />
+                  <Label style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #b91c1c;" text="Panel de Verificacion (Custodia/Admin)" />
+                  <TextArea fx:id="txtMotivoRechazo" prefHeight="60.0" promptText="Motivo en caso de rechazo..." wrapText="true" />
+                  <HBox spacing="10.0">
+                     <children>
+                        <Button fx:id="btnAprobar" maxWidth="1.7976931348623157E308" onAction="#handleAprobar" style="-fx-background-color: #16a34a; -fx-text-fill: white; -fx-font-weight: bold;" text="Aprobar" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnRechazar" maxWidth="1.7976931348623157E308" onAction="#handleRechazar" style="-fx-background-color: #dc2626; -fx-text-fill: white; -fx-font-weight: bold;" text="Rechazar" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Solicitudes de Reclamacion en Proceso" />
+                  <TableView fx:id="tvReclamaciones" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn prefWidth="70.0" text="ID" />
+                        <TableColumn prefWidth="140.0" text="Solicitante" />
+                        <TableColumn prefWidth="130.0" text="Objeto" />
+                        <TableColumn prefWidth="100.0" text="Estado" />
+                        <TableColumn prefWidth="150.0" text="Documento Hash" />
+                     </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

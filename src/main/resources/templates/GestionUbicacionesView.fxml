@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox   xmlns="http://javafx.com/javafx/21"
+        xmlns:fx="http://javafx.com/fxml"
+        spacing="15.0" style="-fx-background-color: #ffffff; -fx-padding: 20;"
+        fx:controller="com.backit.desktop.ui.GestionUbicacionesViewController">
+   <children>
+      <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #0f172a;" text="Jerarquia de Sedes, Bodegas y Puntos de Entrega" />
+      <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox prefWidth="380.0" spacing="12.0" style="-fx-background-color: #f8fafc; -fx-padding: 15; -fx-border-color: #e2e8f0; -fx-border-radius: 8;">
+               <children>
+                  <Label style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Configurar Ubicacion Institucional" />
+                  <TextField fx:id="txtNombreUbicacion" promptText="Nombre de Ubicacion / Punto" />
+                  <ComboBox fx:id="cmbTipoUbicacion" maxWidth="1.7976931348623157E308" promptText="Tipo (SEDE, EDIFICIO, PISO, BODEGA)" />
+                  <ComboBox fx:id="cmbUbicacionPadre" maxWidth="1.7976931348623157E308" promptText="Ubicacion Padre (Jerarquia)" />
+                  <TextField fx:id="txtHorarioAtencion" promptText="Horario de Atencion Punto Entrega" />
+                  <Button fx:id="btnGuardarUbicacion" maxWidth="1.7976931348623157E308" onAction="#handleGuardarUbicacion" style="-fx-background-color: #0284c7; -fx-text-fill: white; -fx-font-weight: bold;" text="Guardar Ubicacion" />
+               </children>
+            </VBox>
+            <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Estructura Jerarquica Registrada" />
+                  <TreeView fx:id="tvJerarquiaUbicaciones" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

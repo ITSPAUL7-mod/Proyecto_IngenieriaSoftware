@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.backit.desktop.prototipo.ModuloBosquejoController"
+      spacing="18" style="-fx-background-color: white; -fx-padding: 24;">
+  <Label text="Historial de estados (previsto Sprint 7)" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+  <Label text="En el producto final, cada objeto mostrara su secuencia de estados y custodios. Ahora solo se ejemplifica." wrapText="true" style="-fx-text-fill: #475569;" />
+  <Label text="PANTALLA BOSQUEJO / datos ficticios" style="-fx-text-fill: #b45309; -fx-font-weight: bold;" />
+  <TableView fx:id="tvGenerico" prefHeight="270"><columns><TableColumn prefWidth="200" text="Fecha y hora"/>
+<TableColumn prefWidth="200" text="Estado del objeto"/>
+<TableColumn prefWidth="200" text="Responsable"/></columns></TableView>
+  <Button onAction="#handleConsultarHistorial" text="Consultar historial simulado" style="-fx-background-color: #0284c7; -fx-text-fill: white;" />
+</VBox>

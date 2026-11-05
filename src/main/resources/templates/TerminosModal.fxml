@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml"
+      prefHeight="500.0" prefWidth="650.0" spacing="15.0" style="-fx-background-color: #ffffff; -fx-padding: 25;"
+      fx:controller="com.backit.desktop.ui.TerminosModalController">
+    <children>
+        <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #0f172a;" text="Terminos, Condiciones y Politicas de Privacidad" />
+        <Label fx:id="lblVersion" style="-fx-font-size: 12px; -fx-text-fill: #64748b;" text="Version Vigente v2.1" />
+        <TextArea fx:id="txtContenidoTerminos" editable="false" prefHeight="280.0" wrapText="true" style="-fx-font-size: 13px;"
+                  text="POLITICA DE PRIVACIDAD Y MANEJO DE DATOS SENSIBLES EN BACKIT&#10;&#10;
+                  Tratamiento de Datos Personales: Los datos recopilados en reportes y hallazgos son procesados estrictamente bajo la normativa institucional.&#10;&#10;
+                  1. Tratamiento de Datos Personales: Los datos recopilados son estrictamente institucionales.&#10;
+                  2. Caracteristicas Privadas: Las señas reservadas registradas para verificar propiedad no seran de acceso publico.&#10;
+                  3. Responsabilidad de Custodia: Las dependencias registradas mantendran los bienes bajo resguardo durante los plazos reglamentarios.&#10;
+                  4. Auditoria de Acceso: Todas las acciones en el aplicativo generan registros inmutables." />
+        <CheckBox fx:id="chkAceptar" style="-fx-font-size: 13px; -fx-font-weight: bold;" text="He leido y acepto expresamente los Terminos y Condiciones de Uso." />
+        <HBox alignment="CENTER_RIGHT" spacing="12.0">
+            <children>
+                <Button fx:id="btnCancelar" onAction="#handleCancelar" style="-fx-background-color: #cbd5e1; -fx-text-fill: #334155;" text="Rechazar y Salir" />
+                <Button fx:id="btnConfirmar" disable="true" onAction="#handleConfirmar" style="-fx-background-color: #16a34a; -fx-text-fill: white; -fx-font-weight: bold;" text="Aceptar y Continuar" />
+            </children>
+        </HBox>
+    </children>
+</VBox>

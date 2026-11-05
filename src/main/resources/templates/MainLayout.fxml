@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.backit.desktop.ui.MainLayoutController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15.0" style="-fx-background-color: #121816; -fx-padding: 12 20;">
+            <children>
+                <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #E6EDE9;" text="BackIt | Sistema Institucional de Objetos Perdidos" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="lblUsuarioInfo" style="-fx-text-fill: #f8fafc; -fx-font-size: 14px;" text="Usuario: Institucional (ADMIN_SEDE)" />
+                <Button fx:id="btnCerrarSesion" onAction="#handleCerrarSesion" style="-fx-background-color: #ef4444; -fx-text-fill: white; -fx-font-weight: bold;" text="Cerrar Sesion" />
+            </children>
+        </HBox>
+    </top>
+    <left>
+        <VBox prefWidth="240.0" spacing="8.0" style="-fx-background-color: #334155; -fx-padding: 15 10;">
+            <children>
+                <Label style="-fx-text-fill: #94a3b8; -fx-font-size: 11px; -fx-font-weight: bold;" text="MENU PRINCIPAL" />
+                <Button fx:id="btnNavObjetosEncontrados" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" onAction="#navObjetosEncontrados" style="-fx-background-color: transparent; -fx-text-fill: #e2e8f0;" text="Objetos Encontrados" />
+                <Button fx:id="btnNavReportePerdida" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" onAction="#navReportePerdida" style="-fx-background-color: transparent; -fx-text-fill: #e2e8f0;" text="Reportar Perdida" />
+                <Button fx:id="btnNavCoincidencias" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" onAction="#navCoincidencias" style="-fx-background-color: transparent; -fx-text-fill: #e2e8f0;" text="Coincidencias (Matching)" />
+                <Button fx:id="btnNavReclamaciones" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" onAction="#navReclamaciones" style="-fx-background-color: transparent; -fx-text-fill: #e2e8f0;" text="Reclamaciones" />
+                <Button fx:id="btnNavEntregaFisica" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" onAction="#navEntregaFisica" style="-fx-background-color: transparent; -fx-text-fill: #e2e8f0;" text="Escaneo QR y Entrega" />
+                <Separator style="-fx-padding: 10 0;" />
+                <Label style="-fx-text-fill: #94a3b8; -fx-font-size: 11px; -fx-font-weight: bold;" text="ADMINISTRACION" />
+                <Button fx:id="btnNavGestionUsuarios" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" onAction="#navGestionUsuarios" style="-fx-background-color: transparent; -fx-text-fill: #e2e8f0;" text="Usuarios y Roles" />
+                <Button fx:id="btnNavGestionUbicaciones" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" onAction="#navGestionUbicaciones" style="-fx-background-color: transparent; -fx-text-fill: #e2e8f0;" text="Sedes y Puntos" />
+                <Button fx:id="btnNavAuditoria" alignment="BASELINE_LEFT" maxWidth="1.7976931348623157E308" onAction="#navAuditoria" style="-fx-background-color: transparent; -fx-text-fill: #e2e8f0;" text="Auditoria e Integridad" />
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-background-color: #64748B; -fx-padding: 20;">
+            <children>
+                <Label style="-fx-font-size: 18px; -fx-text-fill: #64748b;" text="Seleccione un modulo en el menu lateral." />
+            </children>
+        </StackPane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #e2e8f0; -fx-padding: 6 20;">
+            <children>
+                <Label fx:id="lblEstadoConexion" style="-fx-text-fill: #166534; -fx-font-size: 12px;" text="Estado: Conectado a PostgreSQL (Modo Escritorio Seguro)" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="lblHuellaDispositivo" style="-fx-text-fill: #475569; -fx-font-size: 12px;" text="Dispositivo Confiable Registrado" />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

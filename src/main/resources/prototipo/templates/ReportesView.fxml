@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.backit.desktop.prototipo.ModuloBosquejoController"
+      spacing="18" style="-fx-background-color: white; -fx-padding: 24;">
+  <Label text="Paneles y reportes (previsto Sprint 8)" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+  <Label text="Permitira visualizar estadisticas de hallazgos, reclamos y entregas. Los valores son de muestra." wrapText="true" style="-fx-text-fill: #475569;" />
+  <Label text="PANTALLA BOSQUEJO / datos ficticios" style="-fx-text-fill: #b45309; -fx-font-weight: bold;" />
+  <TableView fx:id="tvGenerico" prefHeight="270"><columns><TableColumn prefWidth="200" text="Indicador"/>
+<TableColumn prefWidth="200" text="Periodo"/>
+<TableColumn prefWidth="200" text="Valor de ejemplo"/></columns></TableView>
+  <Button onAction="#handleGenerarReporte" text="Generar reporte ficticio" style="-fx-background-color: #0284c7; -fx-text-fill: white;" />
+</VBox>

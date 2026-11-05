@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="650.0" prefWidth="1050.0" style="-fx-background-color: #0f172a;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.backit.desktop.ui.SetupInicialViewController">
+   <children>
+      <VBox alignment="CENTER" maxWidth="460.0" spacing="12.0" style="-fx-background-color: #FFFFFF; -fx-padding: 40; -fx-background-radius: 12;">
+         <children>
+            <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1e293b;" text="Configuración inicial de BackIt" />
+            <Label style="-fx-font-size: 12px; -fx-text-fill: #64748b;" text="Cree la primera institución y la cuenta SUPERADMIN. Este paso solo aparece una vez." wrapText="true" />
+            <Separator />
+            <TextField fx:id="txtInstitucion" promptText="Nombre de la institución" />
+            <TextField fx:id="txtNombre" promptText="Nombres" />
+            <TextField fx:id="txtApellido" promptText="Apellidos" />
+            <TextField fx:id="txtCorreo" promptText="Correo del SUPERADMIN" />
+            <PasswordField fx:id="txtPassword" promptText="Contraseña (mín. 10, con mayúsculas, minúsculas y números)" />
+            <PasswordField fx:id="txtPasswordConfirmar" promptText="Confirmar contraseña" />
+            <Button fx:id="btnCrear" maxWidth="1.7976931348623157E308" onAction="#handleCrear" style="-fx-background-color: #0284c7; -fx-text-fill: white; -fx-font-size: 15px; -fx-font-weight: bold; -fx-pref-height: 42;" text="Crear SUPERADMIN" />
+         </children>
+      </VBox>
+   </children>
+</VBox>

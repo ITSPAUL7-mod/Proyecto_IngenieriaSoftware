@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.backit.desktop.prototipo.ModuloBosquejoController"
+      spacing="18" style="-fx-background-color: white; -fx-padding: 24;">
+  <Label text="Notificaciones internas (previsto Sprint 5)" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+  <Label text="El sistema avisara al usuario sobre coincidencias y novedades. En esta entrega no envia notificaciones." wrapText="true" style="-fx-text-fill: #475569;" />
+  <Label text="PANTALLA BOSQUEJO / datos ficticios" style="-fx-text-fill: #b45309; -fx-font-weight: bold;" />
+  <TableView fx:id="tvGenerico" prefHeight="270"><columns><TableColumn prefWidth="200" text="Bandeja de mensajes"/>
+<TableColumn prefWidth="200" text="Tipo de aviso"/>
+<TableColumn prefWidth="200" text="Estado (leido / pendiente)"/></columns></TableView>
+  <Button onAction="#handleVerNotificaciones" text="Ver notificaciones de muestra" style="-fx-background-color: #0284c7; -fx-text-fill: white;" />
+</VBox>

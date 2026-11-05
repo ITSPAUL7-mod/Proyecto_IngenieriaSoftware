@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox   xmlns="http://javafx.com/javafx/21"
+        xmlns:fx="http://javafx.com/fxml"
+        spacing="15.0" style="-fx-background-color: #ffffff; -fx-padding: 20;"
+        fx:controller="com.backit.desktop.prototipo.ModuloBosquejoController">
+   <children>
+      <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #0f172a;" text="Registro y Custodia de Objetos Encontrados" />
+      <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox prefWidth="420.0" spacing="12.0" style="-fx-background-color: #f8fafc; -fx-padding: 15; -fx-border-color: #e2e8f0; -fx-border-radius: 8;">
+               <children>
+                  <Label style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Nuevo Registro de Custodia" />
+                  <TextField fx:id="txtTitulo" promptText="Titulo del objeto (ej. Laptop Negra)" />
+                  <ComboBox fx:id="cmbCategoria" maxWidth="1.7976931348623157E308" promptText="Categoria del Objeto" />
+                  <ComboBox fx:id="cmbUbicacion" maxWidth="1.7976931348623157E308" promptText="Ubicacion del Hallazgo (Edificio/Piso)" />
+                  <DatePicker fx:id="dpFechaEncontrado" maxWidth="1.7976931348623157E308" promptText="Fecha de Hallazgo" />
+                  <TextArea fx:id="txtDescripcionPublica" prefHeight="70.0" promptText="Descripcion publica (detalles visibles)..." wrapText="true" />
+                  <TextArea fx:id="txtCaracteristicasPrivadas" prefHeight="70.0" promptText="Caracteristicas privadas / Señas reservadas..." wrapText="true" />
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Button fx:id="btnCargarFoto" onAction="#handleCargarFoto" text="Subir Foto" />
+                        <Label fx:id="lblFotoInfo" text="Sin foto seleccionada" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="btnGuardar" maxWidth="1.7976931348623157E308" onAction="#handleGuardar" style="-fx-background-color: #0284c7; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-height: 38;" text="Guardar y Generar Registro" />
+               </children>
+            </VBox>
+            <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="10.0">
+                     <children>
+                        <Label style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Inventario en Custodia" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnGenerarQR" onAction="#handleGenerarQR" style="-fx-background-color: #475569; -fx-text-fill: white;" text="Generar Etiqueta QR" />
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tvObjetos" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="colId" prefWidth="60.0" text="ID" />
+                        <TableColumn fx:id="colTitulo" prefWidth="140.0" text="Titulo" />
+                        <TableColumn fx:id="colCategoria" prefWidth="100.0" text="Categoria" />
+                        <TableColumn fx:id="colUbicacion" prefWidth="120.0" text="Ubicacion" />
+                        <TableColumn fx:id="colFecha" prefWidth="100.0" text="Fecha" />
+                        <TableColumn fx:id="colEstado" prefWidth="100.0" text="Estado" />
+                     </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>

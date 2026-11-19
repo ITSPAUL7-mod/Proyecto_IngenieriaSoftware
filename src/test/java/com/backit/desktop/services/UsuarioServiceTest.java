@@ -43,7 +43,7 @@ class UsuarioServiceTest {
     @BeforeEach
     void setUp() {
         service = new UsuarioService(usuarios, roles, instituciones, encoder, sesion,
-                new AutorizacionService(sesion), auditoria);
+                new AutorizacionService(sesion), auditoria, mock(AuthService.class));
         sedeA = institucion(1L, "Sede A");
         sedeB = institucion(2L, "Sede B");
         when(instituciones.findById(1L)).thenReturn(Optional.of(sedeA));

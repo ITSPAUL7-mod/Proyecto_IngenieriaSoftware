@@ -43,10 +43,11 @@ public class UsuarioService {
     private final SesionActual sesion;
     private final AutorizacionService autorizacion;
     private final AuditoriaService auditoria;
+    private final AuthService authService;
 
     public UsuarioService(UsuarioRepository usuarios, RolRepository roles, InstitucionRepository instituciones,
                           PasswordEncoder encoder, SesionActual sesion, AutorizacionService autorizacion,
-                          AuditoriaService auditoria) {
+                          AuditoriaService auditoria, AuthService authService) {
         this.usuarios = usuarios;
         this.roles = roles;
         this.instituciones = instituciones;
@@ -54,6 +55,7 @@ public class UsuarioService {
         this.sesion = sesion;
         this.autorizacion = autorizacion;
         this.auditoria = auditoria;
+        this.authService = authService;
     }
 
     @Transactional
@@ -122,10 +124,15 @@ public class UsuarioService {
             throw new AccesoDenegadoException("No puede gestionar esa cuenta.");
         }
         String anterior = objetivo.getEstado();
+        Long objetivoId = objetivo.getId();
         objetivo.setEstado(nuevoEstado.name());
         objetivo.setActualizadoEn(OffsetDateTime.now());
         usuarios.save(objetivo);
-        auditoria.registrar(actor, "USUARIO_CAMBIAR_ESTADO", "usuario", objetivo.getId(),
+        // Reactivar tambien limpia la pausa por intentos fallidos (recuperacion controlada).
+        if (nuevoEstado == EstadoUsuario.ACTIVO) {
+            authService.desbloquear(objetivo.getCorreo());
+        }
+        auditoria.registrar(actor, "USUARIO_CAMBIAR_ESTADO", "usuario", objetivoId,
                 Map.of("anterior", anterior, "nuevo", nuevoEstado.name()));
         return objetivo;
     }

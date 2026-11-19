@@ -14,7 +14,8 @@
                <content>
                   <VBox maxWidth="600.0" spacing="12.0" style="-fx-padding: 20;">
                      <children>
-                        <TextField fx:id="txtTituloPerdida" promptText="Titulo del objeto perdido (ej. Billetera Cuero)" />
+                        <ComboBox fx:id="cmbInstitucion" maxWidth="1.7976931348623157E308" promptText="Institucion (cuentas globales)" />
+                         <TextField fx:id="txtTituloPerdida" promptText="Titulo del objeto perdido (ej. Billetera Cuero)" />
                         <ComboBox fx:id="cmbCategoriaPerdida" maxWidth="1.7976931348623157E308" promptText="Seleccionar Categoria" />
                         <ComboBox fx:id="cmbUbicacionPerdida" maxWidth="1.7976931348623157E308" promptText="Ubicacion Estimada de Perdida" />
                         <DatePicker fx:id="dpFechaPerdida" maxWidth="1.7976931348623157E308" promptText="Fecha Estimada de Perdida" />

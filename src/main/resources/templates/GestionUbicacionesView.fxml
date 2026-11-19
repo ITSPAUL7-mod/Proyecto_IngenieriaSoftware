@@ -13,7 +13,8 @@
             <VBox prefWidth="380.0" spacing="12.0" style="-fx-background-color: #f8fafc; -fx-padding: 15; -fx-border-color: #e2e8f0; -fx-border-radius: 8;">
                <children>
                   <Label style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Configurar Ubicacion Institucional" />
-                  <TextField fx:id="txtNombreUbicacion" promptText="Nombre de Ubicacion / Punto" />
+                  <ComboBox fx:id="cmbInstitucion" maxWidth="1.7976931348623157E308" promptText="Institucion (cuentas globales)" />
+                   <TextField fx:id="txtNombreUbicacion" promptText="Nombre de Ubicacion / Punto" />
                   <ComboBox fx:id="cmbTipoUbicacion" maxWidth="1.7976931348623157E308" promptText="Tipo (SEDE, EDIFICIO, PISO, BODEGA)" />
                   <ComboBox fx:id="cmbUbicacionPadre" maxWidth="1.7976931348623157E308" promptText="Ubicacion Padre (Jerarquia)" />
                   <TextField fx:id="txtHorarioAtencion" promptText="Horario de Atencion Punto Entrega" />

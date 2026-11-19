@@ -18,7 +18,13 @@ final class Alertas {
             mostrar(Alert.AlertType.WARNING, "No se pudo completar la acción", e.getMessage());
         } else {
             e.printStackTrace(); // TODO Sprint 7: persistir en error_sistema
-            mostrar(Alert.AlertType.ERROR, "Error inesperado", "Ocurrió un error interno. Intente nuevamente.");
+            Throwable causa = e;
+            while (causa.getCause() != null) {
+                causa = causa.getCause();
+            }
+            mostrar(Alert.AlertType.ERROR, "Error inesperado",
+                    "Ocurrió un error interno: " + causa.getClass().getSimpleName()
+                            + (causa.getMessage() == null ? "" : " — " + causa.getMessage()));
         }
     }
 

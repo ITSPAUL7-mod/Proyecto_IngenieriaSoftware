@@ -21,6 +21,9 @@
         <java.version>21</java.version>
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Versiones actualizadas para poder ejecutar los tests con JDK 24/25. -->
+        <mockito.version>5.18.0</mockito.version>
+        <byte-buddy.version>1.17.5</byte-buddy.version>
     </properties>
 
     <dependencies>
@@ -62,11 +65,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
         <!-- JavaFX Controls y FXML (Para la interfaz gráfica de escritorio) -->
         <dependency>
             <groupId>org.openjfx</groupId>
@@ -95,18 +93,34 @@
     </dependencies>
 
     <build>
+        <!-- Nombre del ejecutable generado: target/BackIt.jar -->
+        <finalName>BackIt</finalName>
         <plugins>
+            <!-- JDK 23+ desactiva el procesamiento implicito de anotaciones:
+                 sin esto Lombok no genera getters/setters al compilar. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <proc>full</proc>
+                </configuration>
+            </plugin>
+            <!-- mvn javafx:run abre la aplicación real (no el bosquezo). -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-                    <mainClass>com.backit.desktop.prototipo.PrototipoLauncher</mainClass>
+                    <mainClass>com.backit.desktop.AppLauncher</mainClass>
                 </configuration>
             </plugin>
+            <!-- java -jar target/BackIt.jar empaquetado con dependencias (Sprint 0 / base del Sprint 9). -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.backit.desktop.AppLauncher</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>

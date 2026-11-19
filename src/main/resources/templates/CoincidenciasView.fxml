@@ -16,6 +16,7 @@
                 <VBox spacing="10.0" HBox.hgrow="ALWAYS">
                     <children>
                         <Label style="-fx-font-size: 14px; -fx-font-weight: bold;" text="Coincidencias Automáticas Sugeridas" />
+                        <Button fx:id="btnRecalcular" onAction="#handleRecalcular" text="Recalcular coincidencias" style="-fx-background-color: #475569; -fx-text-fill: white;" />
                         <TableView fx:id="tvCoincidencias" VBox.vgrow="ALWAYS">
                             <columns>
                                 <TableColumn fx:id="colId" prefWidth="70.0" text="Match ID" />

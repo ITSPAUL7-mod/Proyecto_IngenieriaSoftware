@@ -20,9 +20,14 @@ public class Navegador {
     }
 
     public Parent cargar(String fxml) throws IOException {
+        return crearLoader(fxml).load();
+    }
+
+    /** Igual que {@link #cargar(String)} pero permite obtener el controlador (ventanas modales). */
+    public FXMLLoader crearLoader(String fxml) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/templates/" + fxml));
         loader.setControllerFactory(springContext::getBean);
-        return loader.load();
+        return loader;
     }
 
     public void irA(Stage stage, String fxml, double ancho, double alto, String titulo) throws IOException {

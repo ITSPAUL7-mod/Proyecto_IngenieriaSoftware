@@ -90,6 +90,17 @@ public class AuthService {
         sesion.cerrar();
     }
 
+    /**
+     * Elimina el contador de fallos de una cuenta. Se usa al reactivar una cuenta
+     * (UsuarioService) y al completar una recuperacion (RecuperacionService):
+     * desbloquear administrativamente no debe dejar la pausa de 15 min activa.
+     */
+    public void desbloquear(String correo) {
+        if (correo != null) {
+            intentos.remove(correo.trim().toLowerCase());
+        }
+    }
+
     private void registrarFallo(String clave, Usuario u) {
         Intentos previo = intentos.getOrDefault(clave, new Intentos(0, null));
         int fallos = previo.fallos() + 1;

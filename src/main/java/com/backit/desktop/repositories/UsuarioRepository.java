@@ -16,4 +16,8 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     List<Usuario> findByInstitucionIdOrderByApellidoAscNombreAsc(Long institucionId);
 
     List<Usuario> findAllByOrderByApellidoAscNombreAsc();
+
+    List<Usuario> findByRolNombreAndInstitucionIdOrderByApellidoAscNombreAsc(String rol, Long institucionId);
+
+    List<Usuario> findByRolNombreOrderByApellidoAscNombreAsc(String rol);
 }

@@ -37,3 +37,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+### BackIt: secretos locales (nunca en Git) ###
+application-local.properties

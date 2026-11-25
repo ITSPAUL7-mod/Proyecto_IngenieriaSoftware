@@ -14,11 +14,7 @@ import java.time.OffsetDateTime;
 import java.util.Map;
 import java.util.TreeMap;
 
-/**
- * Bitácora de acciones sensibles (tabla auditoria_sistema). Solo inserta; nunca actualiza ni borra.
- * Se ejecuta en la misma transacción que la operación auditada: si la operación falla, no queda
- * un registro de algo que no ocurrió.
- */
+
 @Service
 public class AuditoriaService {
 
@@ -30,9 +26,7 @@ public class AuditoriaService {
         this.mapper = mapper;
     }
 
-    /**
-     * @param detalles datos técnicos SIN secretos (nunca contraseñas ni hashes de contraseña).
-     */
+
     @Transactional
     public AuditoriaSistema registrar(Usuario actor, String accion, String entidad,
                                       Object registroId, Map<String, Object> detalles) {

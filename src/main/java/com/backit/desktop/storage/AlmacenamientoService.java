@@ -13,10 +13,9 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.UUID;
 
-/**
- * Sprint 3 - almacenamiento local protegido de fotos, etiquetas QR y evidencias.
- * Carpetas privadas, nombre aleatorio, extension y tamanio validados y hash SHA-256.
- */
+//almacenamiento local protegido de fotos, etiquetas QR y evidencias
+//como Carpetas privadas, nombre aleatorio, extension y tamaño validados y hash SHA-256.
+
 @Service
 public class AlmacenamientoService {
 
@@ -44,7 +43,6 @@ public class AlmacenamientoService {
         return new ArchivoGuardado(destino.toString(), Hashing.sha256Hex(bytes));
     }
 
-    /** Guarda una evidencia de reclamacion (imagen o PDF) con nombre aleatorio y hash SHA-256. */
     public ArchivoGuardado guardarEvidencia(byte[] bytes, String nombreOriginal, String prefijo) throws IOException {
         if (bytes == null || bytes.length == 0) {
             throw new ValidacionException("No se seleccionó ningún archivo.");
@@ -72,7 +70,6 @@ public class AlmacenamientoService {
         return ext;
     }
 
-    /** Guarda la etiqueta QR generada para imprimirla y pegarla en el objeto. */
     public String guardarEtiqueta(byte[] png, UUID codigoQr) throws IOException {
         Path carpeta = base.resolve("qr");
         Files.createDirectories(carpeta);

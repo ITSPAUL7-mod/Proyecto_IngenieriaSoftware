@@ -6,10 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
-/**
- * Compara las señas privadas. El resultado es un puntaje mas, NO se muestra al
- * usuario en las consultas generales ni se incluye en el QR (informe tecnico).
- */
+
 @Component
 public class CriterioCaracteristicas implements CriterioMatching {
 

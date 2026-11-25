@@ -17,12 +17,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Autenticación por correo + contraseña BCrypt.
- * - Límite de intentos: tras 5 fallos seguidos la cuenta queda en pausa 15 min (en memoria).
- *   Es distinto del "bloqueo administrativo" (estado BLOQUEADO), que solo cambia un administrador;
- *   así un atacante no puede dejar fuera de forma permanente al único SUPERADMIN.
- */
+
 @Service
 public class AuthService {
 
@@ -90,11 +85,7 @@ public class AuthService {
         sesion.cerrar();
     }
 
-    /**
-     * Elimina el contador de fallos de una cuenta. Se usa al reactivar una cuenta
-     * (UsuarioService) y al completar una recuperacion (RecuperacionService):
-     * desbloquear administrativamente no debe dejar la pausa de 15 min activa.
-     */
+
     public void desbloquear(String correo) {
         if (correo != null) {
             intentos.remove(correo.trim().toLowerCase());

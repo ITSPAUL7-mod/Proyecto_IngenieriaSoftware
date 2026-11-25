@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.OffsetDateTime;
 import java.util.List;
 
-/** Sprint 3 - categorias iniciales del catalogo. Solo anade las que falten. */
+//categorias iniciales del catalogo
 @Service
 public class CatalogosSeedService implements ApplicationRunner {
 

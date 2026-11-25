@@ -10,11 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.OffsetDateTime;
 
-/**
- * Sprint 1 - siembra la version inicial de los Terminos y Condiciones.
- * Idempotente: solo inserta si no existe la version 1.0; nunca pisa una
- * version publicada posteriormente desde la UI.
- */
+//Terminos iniciales que van dentro de la interfaz de JavaFX
 @Service
 public class TerminosSeedService implements ApplicationRunner {
 

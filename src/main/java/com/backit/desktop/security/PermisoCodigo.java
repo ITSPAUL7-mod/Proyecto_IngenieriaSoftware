@@ -1,9 +1,5 @@
 package com.backit.desktop.security;
 
-/**
- * Catálogo de permisos (tabla permiso). name() es permiso.codigo.
- * Se siembran en el arranque (ver RbacSeedService) y se asignan por rol en {@link RbacCatalogo}.
- */
 public enum PermisoCodigo {
     USUARIO_VER("Ver usuarios", "USUARIOS"),
     USUARIO_CREAR_PRIVILEGIADO("Crear SUPERADMIN, AUDITOR y ADMIN_SEDE", "USUARIOS"),

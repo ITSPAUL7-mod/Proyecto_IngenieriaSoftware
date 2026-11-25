@@ -26,7 +26,6 @@ import java.io.File;
 import java.nio.file.Files;
 import java.time.format.DateTimeFormatter;
 
-/** Sprint 3 - registro real de hallazgos (antes solo imprimia por consola). */
 @Component
 public class ObjetosEncontradosViewController {
 

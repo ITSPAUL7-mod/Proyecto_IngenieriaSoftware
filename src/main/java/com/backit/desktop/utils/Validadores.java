@@ -5,12 +5,10 @@ import com.backit.desktop.exceptions.ValidacionException;
 import java.nio.charset.StandardCharsets;
 import java.util.regex.Pattern;
 
-/** Validación de entradas antes de llegar a JPA (complementa las consultas parametrizadas). */
 public final class Validadores {
 
     private static final Pattern CORREO = Pattern.compile("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$");
     public static final int PASSWORD_MIN = 10;
-    /** BCrypt solo procesa los primeros 72 bytes: se rechaza más para no truncar en silencio. */
     public static final int PASSWORD_MAX_BYTES = 72;
 
     private Validadores() {
@@ -27,7 +25,6 @@ public final class Validadores {
         return limpio;
     }
 
-    /** Devuelve el correo normalizado (minúsculas, sin espacios). */
     public static String correo(String valor) {
         String c = texto(valor, "Correo", 180).toLowerCase();
         if (!CORREO.matcher(c).matches()) {

@@ -11,7 +11,6 @@ import javafx.stage.Stage;
 import model.sistema.TerminoCondicion;
 import org.springframework.stereotype.Component;
 
-/** Sprint 1 - ventana bloqueante de aceptacion versionada de Terminos y Condiciones. */
 @Component
 public class TerminosModalController {
 

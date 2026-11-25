@@ -2,7 +2,7 @@ package com.backit.desktop.utils;
 
 import java.net.InetAddress;
 
-/** Valor para las columnas "origen" (host/sesión) de auditoría y errores. */
+//para saber como esta logeado el usuario
 public final class Origen {
 
     private static final String ACTUAL = resolver();

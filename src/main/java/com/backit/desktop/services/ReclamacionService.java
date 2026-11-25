@@ -31,7 +31,6 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-/** Sprint 6 - reclamaciones con evidencias privadas, aprobacion/rechazo y verificacion. */
 @Service
 public class ReclamacionService {
 

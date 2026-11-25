@@ -1,5 +1,5 @@
 package com.backit.desktop.dto;
 
-/** Sprint 6 - iniciar una reclamacion a partir de una coincidencia sugerida. */
+//iniciar una reclamacion a partir de una coincidencia
 public record CrearReclamacionDto(Long coincidenciaId) {
 }

@@ -1,6 +1,6 @@
 package com.backit.desktop.dto;
 
-/** Datos del asistente de primer arranque: primera institución + cuenta SUPERADMIN. */
+//Datos del asistente de primer arranque: primera institución mas la cuenta del SUPERADMIN.
 public record ConfiguracionInicialDto(
         String nombreInstitucion,
         String nombre,

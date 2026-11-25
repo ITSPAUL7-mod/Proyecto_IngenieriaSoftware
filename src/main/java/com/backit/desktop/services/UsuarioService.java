@@ -25,14 +25,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Aprovisionamiento de cuentas (Sprint 2).
- *
- * Jerarquía de altas:
- *   SUPERADMIN  → SUPERADMIN, AUDITOR (globales) y ADMIN_SEDE / PERSONAL_CUSTODIA / USUARIO_FINAL (de una institución)
- *   ADMIN_SEDE  → PERSONAL_CUSTODIA y USUARIO_FINAL, siempre dentro de SU institución
- *   resto       → ninguno
- */
+//Jerarquia de roles del aplicativo
 @Service
 public class UsuarioService {
 
@@ -137,7 +130,6 @@ public class UsuarioService {
         return objetivo;
     }
 
-    /** Cuentas globales (SUPERADMIN, AUDITOR) ven todo; ADMIN_SEDE solo su institución. */
     @Transactional(readOnly = true)
     public List<Usuario> listarVisibles() {
         autorizacion.requerir(PermisoCodigo.USUARIO_VER);
@@ -148,7 +140,6 @@ public class UsuarioService {
         return usuarios.findByInstitucionIdOrderByApellidoAscNombreAsc(actor.getInstitucion().getId());
     }
 
-    /** Roles que el usuario actual puede ofrecer en el formulario de alta (solo ayuda a la UI). */
     public List<RolNombre> rolesCreables() {
         return sesion.rolActual().rolesCreables();
     }

@@ -2,7 +2,7 @@ package com.backit.desktop.dto;
 
 import java.time.LocalDate;
 
-/** Sprint 4 - alta de un reporte de pérdida. */
+// creacion de un reporte de pérdida del objeto.
 public record CrearReporteDto(
         String titulo,
         String descripcion,

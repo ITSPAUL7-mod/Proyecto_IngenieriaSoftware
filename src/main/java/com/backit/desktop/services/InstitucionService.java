@@ -44,19 +44,13 @@ public class InstitucionService {
         return i;
     }
 
-    /**
-     * Uso exclusivo del asistente de primer arranque, cuando aún no existe ningún usuario que pueda autenticarse.
-     * NO debe invocarse desde la UI: solo la llama ConfiguracionInicialService, que antes verifica que
-     * no exista ningún SUPERADMIN. (Es public porque un método package-private no se intercepta de
-     * forma fiable en el proxy transaccional.)
-     */
+
     @Transactional
     public Institucion crearSinSesion(CrearInstitucionDto dto) {
         Institucion i = construir(dto);
         return instituciones.save(i);
     }
 
-    /** SUPERADMIN ve todas las activas; ADMIN_SEDE solo la propia. */
     @Transactional(readOnly = true)
     public List<Institucion> visibles() {
         Usuario actor = sesion.requerirUsuario();

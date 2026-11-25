@@ -20,11 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.OffsetDateTime;
 import java.util.Map;
 
-/**
- * Sprint 1 - mecanismo de Términos y Condiciones versionados.
- * Bloquea el uso normal mientras el usuario no acepte la version vigente y
- * guarda usuario + version + fecha + hash del contenido como evidencia.
- */
+//Terminos y Condiciones del aplicativo BackIt
 @Service
 public class TerminoCondicionService {
 
@@ -67,10 +63,7 @@ public class TerminoCondicionService {
                 usuario.getId(), v.getId());
     }
 
-    /**
-     * Registra la decision del usuario. Revoca su aceptacion anterior de la misma
-     * version para que siempre exista una unica evidencia vigente.
-     */
+
     @Transactional
     public void registrarDecision(Usuario usuario, boolean aceptado) {
         if (usuario == null) {
@@ -102,7 +95,6 @@ public class TerminoCondicionService {
                         "contenidoHash", v.getContenidoHash()));
     }
 
-    /** Publica una nueva version y deja inactiva la anterior (requiere TERMINOS_GESTIONAR). */
     @Transactional
     public TerminoCondicion publicar(CrearTerminoDto dto) {
         autorizacion.requerir(PermisoCodigo.TERMINOS_GESTIONAR);

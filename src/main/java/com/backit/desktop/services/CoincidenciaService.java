@@ -19,7 +19,6 @@ import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
-/** Sprint 5 - consulta y revision humana de coincidencias sugeridas. */
 @Service
 public class CoincidenciaService {
 

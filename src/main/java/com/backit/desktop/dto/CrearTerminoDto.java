@@ -1,5 +1,5 @@
 package com.backit.desktop.dto;
 
-/** Nueva version de Terminos y Condiciones (Sprint 1). */
+//Terminos y Condiciones del funcionamiento del aplicativo
 public record CrearTerminoDto(String version, String titulo, String contenido) {
 }

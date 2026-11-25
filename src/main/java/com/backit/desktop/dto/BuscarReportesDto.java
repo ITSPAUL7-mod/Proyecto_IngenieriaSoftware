@@ -2,7 +2,7 @@ package com.backit.desktop.dto;
 
 import java.time.LocalDate;
 
-/** Sprint 4 - filtros de busqueda por atributos del catalogo publico. */
+//filtros de busqueda por atributos del catalogo.
 public record BuscarReportesDto(
         String texto,
         Long categoriaId,

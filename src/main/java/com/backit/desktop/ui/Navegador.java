@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-/** Carga FXML con controladores gestionados por Spring y cambia la escena de la ventana. */
 @Component
 public class Navegador {
 

@@ -15,7 +15,7 @@ import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
-/** Sprint 3 - catalogo de categorias de objetos. */
+//catalogo de categorias de objetos
 @Service
 public class CategoriaService {
 

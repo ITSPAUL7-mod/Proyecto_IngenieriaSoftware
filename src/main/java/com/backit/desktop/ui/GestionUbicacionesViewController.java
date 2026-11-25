@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-/** Sprint 2 - pantalla real de ubicaciones (antes solo datos de ejemplo). */
 @Component
 public class GestionUbicacionesViewController {
 

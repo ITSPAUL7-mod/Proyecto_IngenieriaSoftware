@@ -1,6 +1,6 @@
 package com.backit.desktop.dto;
 
-/** Alta de una ubicacion jerarquica y, opcionalmente, de su punto de entrega. */
+//creacion de la ubicacion
 public record CrearUbicacionDto(
         String nombre,
         String tipo,

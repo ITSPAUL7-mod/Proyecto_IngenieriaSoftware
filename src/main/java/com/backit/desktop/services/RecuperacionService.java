@@ -17,16 +17,11 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
-/**
- * Sprint 1 - recuperación controlada de cuenta.
- * No hay servicio de correo en el prototipo: el token se devuelve al llamador para
- * que la UI lo muestre. En produccion debe enviarse por un canal seguro.
- * Solo se guarda el HASH del token (nunca el token en claro) y caduca a los 30 min.
- */
+//Recuperacion de cuenta al usuario por tiempo limite
 @Service
 public class RecuperacionService {
 
-    private static final long VIGENCIA_MINUTOS = 30;
+    private static final long VIGENCIA_MINUTOS = 5;
 
     private record Token(Long usuarioId, Instant expiraEn) {
     }
@@ -45,7 +40,6 @@ public class RecuperacionService {
         this.auditoria = auditoria;
     }
 
-    /** Devuelve siempre un token (real o ficticio) para no revelar qué correos existen. */
     @Transactional
     public String solicitar(String correo) {
         String clave = correo == null ? "" : correo.trim().toLowerCase();
@@ -64,7 +58,6 @@ public class RecuperacionService {
         return token;
     }
 
-    /** Canjea el token por una nueva contraseña y limpia el bloqueo por intentos. */
     @Transactional
     public void restablecer(String token, String nuevaPassword) {
         if (token == null || token.isBlank()) {

@@ -19,7 +19,6 @@ import org.springframework.stereotype.Component;
 
 import java.time.format.DateTimeFormatter;
 
-/** Sprint 4 - alta de reportes y busqueda real por atributos. */
 @Component
 public class ReportePerdidaViewController {
 

@@ -2,14 +2,7 @@ package com.backit.desktop.security;
 
 import java.util.List;
 
-/**
- * Los cinco perfiles definidos en el Informe Técnico (sección 5).
- * El nombre del enum coincide con rol.nombre en la base de datos.
- *
- * nivelAcceso solo se usa para poblar rol.nivel_acceso; la decisión de "quién puede
- * crear a quién" NO se deriva del nivel sino de la matriz explícita de {@link #rolesCreables()},
- * porque AUDITOR no es un "escalón" entre ADMIN_SEDE y PERSONAL_CUSTODIA.
- */
+
 public enum RolNombre {
     SUPERADMIN(100, "Administración técnica total, parámetros globales, usuarios privilegiados y recuperación controlada."),
     AUDITOR(60, "Consulta de auditoría, integridad, eventos y reportes; sin modificación de operación."),

@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 import java.io.File;
 import java.nio.file.Files;
 
-/** Sprint 6 - reclamaciones reales con evidencias privadas y verificacion. */
 @Component
 public class ReclamacionesViewController {
 

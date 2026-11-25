@@ -1,6 +1,6 @@
 package com.backit.desktop.exceptions;
 
-/** El usuario autenticado no tiene permiso para la operación (RBAC aplicado en servicios). */
+// Para el acceso restringido de roles inferiores (RBAC). */
 public class AccesoDenegadoException extends BackItException {
     public AccesoDenegadoException(String mensaje) {
         super(mensaje);

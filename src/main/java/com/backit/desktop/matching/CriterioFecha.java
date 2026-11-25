@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 import java.time.temporal.ChronoUnit;
 
-/** Cada dia de diferencia reduce 5 puntos; a partir de 20 dias, cero. */
 @Component
 public class CriterioFecha implements CriterioMatching {
 

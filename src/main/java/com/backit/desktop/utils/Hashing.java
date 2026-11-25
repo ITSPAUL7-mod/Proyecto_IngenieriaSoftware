@@ -10,7 +10,7 @@ public final class Hashing {
     private Hashing() {
     }
 
-    /** SHA-256 en hexadecimal minúscula (64 caracteres), como exige el diseño de BD. */
+    /** SHA-256 en hexadecimal minúscula (64 caracteres) */
     public static String sha256Hex(String texto) {
         return sha256Hex(texto.getBytes(StandardCharsets.UTF_8));
     }

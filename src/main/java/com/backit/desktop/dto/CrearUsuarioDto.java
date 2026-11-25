@@ -2,7 +2,7 @@ package com.backit.desktop.dto;
 
 import com.backit.desktop.security.RolNombre;
 
-/** Alta de una cuenta por un usuario autenticado. institucionId es nulo para roles globales. */
+//creacion de una cuenta por un usuario autenticado
 public record CrearUsuarioDto(
         String nombre,
         String apellido,

@@ -9,7 +9,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import org.springframework.stereotype.Component;
 
-/** Asistente de primer arranque: crea la primera institución y el SUPERADMIN. */
 @Component
 public class SetupInicialViewController {
 

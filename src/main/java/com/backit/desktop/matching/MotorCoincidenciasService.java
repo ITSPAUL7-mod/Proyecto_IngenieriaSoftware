@@ -20,15 +20,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Sprint 5 - motor de coincidencias multicriterio explicable.
- * Superar el umbral SOLO genera una sugerencia y una notificacion: nunca autoriza
- * una entrega (requiere reclamacion y verificacion humana, Sprint 6/7).
- */
+
 @Service
 public class MotorCoincidenciasService {
 
-    /** Pesos de los criterios (suman 1.00). Se pueden cambiar sin tocar los criterios (Strategy). */
     public static final Map<String, BigDecimal> PESOS = Map.of(
             "CATEGORIA", new BigDecimal("0.25"),
             "DESCRIPCION", new BigDecimal("0.30"),
@@ -66,7 +61,6 @@ public class MotorCoincidenciasService {
         this.umbral = umbral;
     }
 
-    /** Calcula el desglose y el total ponderado, ambos entre 0 y 100. */
     public ResultadoMatching calcular(ObjetoEncontrado o, ReportePerdida r) {
         Map<String, BigDecimal> puntos = new HashMap<>();
         for (CriterioMatching criterio : criterios) {
@@ -107,7 +101,6 @@ public class MotorCoincidenciasService {
         }
     }
 
-    /** Reevalua todos los pares vigentes. Util cuando se cambia el umbral o se cargaron datos antes. */
     @Transactional
     public ResultadoRecalculo recalcularTodo() {
         var candidatosObjetos = objetos.findByEstadoIn(ESTADOS_OBJETO_CANDIDATOS);

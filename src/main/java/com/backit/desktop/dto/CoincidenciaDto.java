@@ -2,7 +2,7 @@ package com.backit.desktop.dto;
 
 import java.math.BigDecimal;
 
-/** Vista resumida y explicable de una coincidencia (Sprint 5). */
+//Vista resumida y explicable de una coincidencia
 public record CoincidenciaDto(
         Long id,
         String objetoTitulo,

@@ -20,13 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.OffsetDateTime;
 import java.util.Map;
 
-/**
- * Creación del PRIMER SUPERADMIN (arranque en frío).
- *
- * No existe contraseña por defecto ni cuenta "admin/admin" en el código: el asistente solo se
- * ofrece mientras NO exista ningún SUPERADMIN en la base de datos y se cierra para siempre al crearlo.
- * Todos los SUPERADMIN posteriores se crean desde UsuarioService, con sesión y auditoría.
- */
+
 @Service
 public class ConfiguracionInicialService {
 

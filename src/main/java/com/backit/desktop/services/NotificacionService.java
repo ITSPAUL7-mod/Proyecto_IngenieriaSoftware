@@ -15,7 +15,6 @@ import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
-/** Sprint 5 - notificaciones internas (MATCH, RECLAMO, ENTREGA, SISTEMA). */
 @Service
 public class NotificacionService {
 

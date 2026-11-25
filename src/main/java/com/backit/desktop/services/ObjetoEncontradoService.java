@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-/** Sprint 3 - registro, custodia, foto protegida y QR de objetos encontrados. */
+//registro, foto protegida y QR de los diferentes objetos encontrados
 @Service
 public class ObjetoEncontradoService {
 

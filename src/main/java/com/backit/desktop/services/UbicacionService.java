@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/** Sprint 2 - catalogo jerarquico de sedes, edificios, pisos, zonas y bodegas. */
+//Ubicacion de sedes, edificios, pisos, zonas y bodegas
 @Service
 public class UbicacionService {
 
@@ -104,13 +104,11 @@ public class UbicacionService {
         return u;
     }
 
-    /** Sin comprobacion de permiso: lo usan otros servicios para poblar sus combos. */
     @Transactional(readOnly = true)
     public List<Ubicacion> visibles() {
         return visiblesDe(null);
     }
 
-    /** Ubicaciones de una institucion concreta (o todas si el actor es global y no indica una). */
     @Transactional(readOnly = true)
     public List<Ubicacion> visiblesDe(Long institucionId) {
         Usuario actor = sesion.requerirUsuario();

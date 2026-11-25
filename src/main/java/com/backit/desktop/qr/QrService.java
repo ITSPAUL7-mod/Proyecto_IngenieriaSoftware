@@ -19,9 +19,8 @@ import java.io.IOException;
 import java.util.Optional;
 import java.util.UUID;
 
-/**
- * Sprint 3 (y base del Sprint 7) - generacion y lectura de QR con ZXing.
- * El contenido es SOLO el token UUID: nunca datos privados ni el ID secuencial.
+/** generacion y lectura de QR con ZXing.
+ * El contenido del QR es solo del token UUID: nunca datos privados ni el ID secuencial.
  */
 @Service
 public class QrService {

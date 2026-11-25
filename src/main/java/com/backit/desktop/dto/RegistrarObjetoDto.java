@@ -2,7 +2,7 @@ package com.backit.desktop.dto;
 
 import java.time.LocalDate;
 
-/** Sprint 3 - datos del formulario de hallazgo. */
+//datos del formulario de hallazgo del objeto
 public record RegistrarObjetoDto(
         String titulo,
         String descripcion,

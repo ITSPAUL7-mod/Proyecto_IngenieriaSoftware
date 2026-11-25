@@ -16,7 +16,6 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
-/** Sprint 5 + 6 - coincidencias con desglose y acceso a la reclamacion formal. */
 @Component
 public class CoincidenciasViewController {
 

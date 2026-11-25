@@ -3,7 +3,6 @@ package com.backit.desktop.ui;
 import com.backit.desktop.exceptions.BackItException;
 import javafx.scene.control.Alert;
 
-/** Mensajes al usuario. Las excepciones de dominio muestran su mensaje; las demás, uno genérico. */
 final class Alertas {
 
     private Alertas() {

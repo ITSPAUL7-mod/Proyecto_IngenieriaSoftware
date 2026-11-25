@@ -7,10 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 import java.util.Set;
 
-/**
- * Sesión del único usuario que usa la aplicación de escritorio.
- * Los servicios leen de aquí el actor; nunca lo reciben desde la UI (evita suplantación por parámetro).
- */
+
 @Component
 public class SesionActual {
 

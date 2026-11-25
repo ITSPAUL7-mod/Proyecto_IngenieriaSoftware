@@ -13,7 +13,6 @@ import java.util.Locale;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-/** Similitud de Jaccard entre las palabras de ambas descripciones publicas. */
 @Component
 public class CriterioDescripcion implements CriterioMatching {
 

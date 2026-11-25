@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-/** Sprint 4 - reportes de perdida y busqueda por atributos. */
+//reportes de perdida y busqueda por atributos
 @Service
 public class ReportePerdidaService {
 

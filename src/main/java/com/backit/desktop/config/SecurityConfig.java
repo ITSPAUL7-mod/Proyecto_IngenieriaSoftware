@@ -8,7 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class SecurityConfig {
 
-    /** BCrypt (Spring Security). Nunca se guarda una contraseña en texto claro. */
+    //BCrypt (Spring Security). Aqui es donde se realiza el BCrypt
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder(12);

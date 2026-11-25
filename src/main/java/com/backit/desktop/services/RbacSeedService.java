@@ -16,11 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.OffsetDateTime;
 
-/**
- * Siembra roles, permisos y rol_permiso al arrancar. Es idempotente y solo AÑADE lo que falta:
- * no pisa cambios hechos después por un SUPERADMIN.
- * Debe correr antes de mostrar cualquier pantalla (Spring ejecuta los ApplicationRunner dentro de SpringApplication.run).
- */
+//creacion de los distintos roles dentro del aplicativo
 @Service
 public class RbacSeedService implements ApplicationRunner {
 
